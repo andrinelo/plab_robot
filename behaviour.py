@@ -1,4 +1,4 @@
-class Behaviours:
+class Behaviour:
 
     def __init__(self, bbcon):
         self.bbcon = bbcon #pointer to the controller.

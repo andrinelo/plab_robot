@@ -1,14 +1,18 @@
 class Motob:
 
     def __init__(self):
-        self.motors = [] #list of all motors whose values it sets
+        self.motors = ["left", "right"] #list of all motors whose values it sets
         self.value = None #most recent motor recommendation sent to the motob.
 
-    def update(self):
+    def update(self, recommendation):
+        self.value = recommendation
+        self.operationalize()
         #load new motor recommendation into the value slot and operationalize it.
         pass
 
     def operationalize(self):
+        #self.value  this equals the recommendation
+
         #convert value into motor settings and send to the corresponding motor(s).
         pass
 
