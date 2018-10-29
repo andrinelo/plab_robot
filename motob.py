@@ -12,4 +12,9 @@ class Motob:
         #convert value into motor settings and send to the corresponding motor(s).
         pass
 
-    
+
+'''
+In the robot project, the only actuators are the wheels, so the motob and the
+(wheel) motor wrapper are about the same thing. See file motors.py for
+details of the motor wrapper, and then build your motob class based on that.
+'''

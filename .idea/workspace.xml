@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="472c2274-d505-4f27-9ef2-ab2c42d53154" name="Default" comment="" />
+    <list default="true" id="472c2274-d505-4f27-9ef2-ab2c42d53154" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/motob.py" afterPath="$PROJECT_DIR$/motob.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,11 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="motob.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="motob.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/motob.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="285">
+              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="behaviours.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/behaviours.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -70,6 +82,7 @@
         <option value="$PROJECT_DIR$/BBCON.py" />
         <option value="$PROJECT_DIR$/sensob.py" />
         <option value="$PROJECT_DIR$/motob.py" />
+        <option value="$PROJECT_DIR$/behaviours.py" />
       </list>
     </option>
   </component>
@@ -372,8 +385,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/motob.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="285">
+          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/behaviours.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
           <folding />
         </state>
       </provider>
