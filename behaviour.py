@@ -15,13 +15,11 @@ class Behaviour:
         #whenever a behavior is active, it should test whether it should deactivate.
         #disse implementeres i subklassene. kall på act/deact i bbcon
 
-        pass
 
     def consider_activation(self):
         raise NotImplementedError
         # disse implementeres i subklassene. kall på act/deact i bbcon
         #whenever a behavior is inactive, it should test whether it should activate.
-        pass
 
     def update(self):
         #update activity status
