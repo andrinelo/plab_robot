@@ -1,12 +1,22 @@
 from time import sleep
+from motob import Motob
+from camera import Camera
+from sensob import Sensob
+from irproximity_sensor import IRProximitySensor
+from reflectance_sensors import ReflectanceSensors
+from ultrasonic import Ultrasonic
+from zumo_button import ZumoButton
+from arbitrator import Arbitrator
+
+
 class BBCON:
 
     def __init__(self):
         self.behaviours = [] #list of all behavior objects (BHRs)
         self.active_behaviours = [] #a list of all currently-active BHRs.
         self.sensobs = [] #a list of all sensory objects
-        self.motobs = [] #a list of all motor objects
-        self.arb = None #this resolves motor requests produced by the behaviors.
+        self.motobs = [Motob()] #a list of all motor objects
+        self.arb = Arbitrator() #this resolves motor requests produced by the behaviors.
 
 
     def add_behaviour(self, behaviour):
@@ -44,13 +54,15 @@ class BBCON:
 
     def invoke_arb(self):
         #Invoke the arbitrator by calling arbitrator.choose action.
-        self.arb.choose_action()
+        return self.arb.choose_action(self.active_behaviours) #usikker på om den kun skal velge mellom de aktive eller alle
 
 
-    def update_motobs(self):
+
+
+    def update_motobs(self, behaviour, haltflag):
         #Update motobs based on the winning motor recommendations.
         for motob in self.motobs:
-            motob.update()
+            motob.update(behaviour, haltflag)
 
 
     def wait(self):
@@ -67,9 +79,18 @@ class BBCON:
         #Does methods 1-6 in sequence
         self.update_sensobs()
         self.update_behaviours()
-        self.invoke_arb()
-        self.update_motobs()
+        setting, haltflag = self.invoke_arb()
+        self.update_motobs(behaviour, haltflag)
         self.wait()
         self.reset_sensobs()
 
+if __name__ == '__main__':
+    bbcon = BBCON()
+    #adding sensobs
+    bbcon.add_sensob(Sensob(Camera()))
+    bbcon.add_sensob(Sensob(Ultrasonic()))
+    bbcon.add_sensob(Sensob(IRProximitySensor()))
+    bbcon.add_sensob(Sensob(ReflectanceSensors()))
+    bbcon.add_sensob(Sensob(ZumoButton()))
+    #adding behaviours
 

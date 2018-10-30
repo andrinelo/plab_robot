@@ -4,7 +4,8 @@ import RPi.GPIO as GPIO
 import wiringpi2 as wp
 
 
-class Motors():
+class Motors:
+
     def __init__(self):
         self.setup()
 

@@ -8,8 +8,8 @@ One Sensob for each of these sensors:
 
 class Sensob:
 
-    def __init__(self):
-        self.sensors = [] #list of all sensors that this sensob 'controls'
+    def __init__(self, sensor):
+        self.sensors = [sensor] #list of all sensors that this sensob 'controls'
         self.value = None
 
     def update(self):
