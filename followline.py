@@ -6,7 +6,6 @@ class FollowLine(Behaviour):
     def __init__(self, bbcon, sensob, recommendations, priority):
         super().__init__(bbcon, sensob, recommendations, priority)
         self.name = "FollowLine"
-        self.sensob#Ta inn riktig sensor her etterhvert
         self.treshold = 0.3
 
     def consider_activation(self):
