@@ -22,15 +22,22 @@ class Behaviour:
         #whenever a behavior is inactive, it should test whether it should activate.
 
     def update(self):
-        #update activity status
-        #call sense_and_act
-        #set weight to match degree x priority ;
-        pass
+
+        # update activity status
+        if self.active_flag:
+            self.consider_deactivation()
+        else:
+            self.consider_activation()
+
+        self.sense_and_act() #call sense_and_act
+
+        self.weight = self.priority * self.match_degree #set weight to match degree x priority
+
 
     def sense_and_act(self):
         #main action of a behaviour
         #use sensob readings to produce motob recommendations (and halt requests)
-        pass
+        raise NotImplementedError
 
     '''
     In general, behaviors can do many things, but must:
