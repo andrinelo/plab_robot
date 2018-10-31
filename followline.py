@@ -3,7 +3,7 @@ from sensob import ReflectanceSensob
 
 class FollowLine(Behaviour):
 
-    def __init__(self, bbcon, recommendations, priority):
+    def __init__(self, bbcon, recommendations):
         super().__init__(bbcon, sensob, recommendations, priority)
         self.name = "FollowLine"
         self.sensobs.append(ReflectanceSensob)
