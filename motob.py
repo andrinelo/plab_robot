@@ -3,8 +3,9 @@ from motors import Motors
 class Motob:
 
     def __init__(self):
-        self.motors = [Motors()] #list of all motors whose values it sets
+        self.motor = Motors() #list of all motors whose values it sets
         self.value = None #most recent motor recommendation sent to the motob.
+        self.motorsettings = {'f': self.motor.forward, 'b':self.motor.backward, 'l':self.motor.left, 'r':self.motor.right, 's':self.motor.stop}
 
     def update(self, setting, haltflag):
         if haltflag:
@@ -12,13 +13,18 @@ class Motob:
                 motor.stop()
         else:
             self.value = setting
-            self.operationalize(setting)
+            self.operationalize()
         #load new motor recommendation into the value slot and operationalize it.
 
-    def operationalize(self, setting):
-
+    def operationalize(self):
+        if len(self.value) == 2:
+            self.motorsettings[self.value[0]](dur=self.value[1])
+        elif len(self.value)==1:
+            self.motorsettings[self.value[0]]()
+        else: 
+            pass
         #convert value into motor settings and send to the corresponding motor(s).
-        pass
+        
 
 
 '''
