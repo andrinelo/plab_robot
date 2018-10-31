@@ -4,6 +4,7 @@
     <list default="true" id="472c2274-d505-4f27-9ef2-ab2c42d53154" name="Default" comment="">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/plab_robot.iml" afterPath="$PROJECT_DIR$/.idea/plab_robot.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -17,6 +18,9 @@
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BBCON.py" afterPath="$PROJECT_DIR$/BBCON.py" />
 >>>>>>> CameraSensor
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arbitrator.py" afterPath="$PROJECT_DIR$/arbitrator.py" />
+>>>>>>> arbitrator
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,6 +33,7 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
@@ -228,6 +233,48 @@
         </entry>
       </file>
     </leaf>
+=======
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="behaviour.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/behaviour.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="arbitrator.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/arbitrator.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+>>>>>>> arbitrator
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -246,11 +293,16 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/motors.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/arbitrator.py" />
+=======
+        <option value="$PROJECT_DIR$/sensob.py" />
+>>>>>>> arbitrator
         <option value="$PROJECT_DIR$/motob.py" />
         <option value="$PROJECT_DIR$/TakePicture.py" />
         <option value="$PROJECT_DIR$/picture.py" />
         <option value="$PROJECT_DIR$/behaviour.py" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/linebehaviour.py" />
@@ -263,6 +315,9 @@
         <option value="$PROJECT_DIR$/cameraBehaviour.py" />
         <option value="$PROJECT_DIR$/BBCON.py" />
 >>>>>>> CameraSensor
+=======
+        <option value="$PROJECT_DIR$/arbitrator.py" />
+>>>>>>> arbitrator
       </list>
     </option>
   </component>
@@ -597,7 +652,11 @@
     <editor active="true" />
     <layout>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24368049" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24368049" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+>>>>>>> arbitrator
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1103,6 +1162,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/irproximity_sensor.py">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1118,6 +1178,9 @@
     </entry>
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/reflectance_sensors.py">
+=======
+    <entry file="file://$PROJECT_DIR$/BBCON.py">
+>>>>>>> arbitrator
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1189,6 +1252,7 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="444">
           <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
 =======
@@ -1212,15 +1276,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="82" column="34" lean-forward="false" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+=======
+        <state relative-caret-position="270">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+>>>>>>> arbitrator
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/cameraBehaviour.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
 >>>>>>> CameraSensor
+=======
+    <entry file="file://$PROJECT_DIR$/arbitrator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+>>>>>>> arbitrator
           <folding />
         </state>
       </provider>
