@@ -80,7 +80,7 @@ class BBCON:
         self.update_sensobs()
         self.update_behaviours()
         setting, haltflag = self.invoke_arb()
-        self.update_motobs(behaviour, haltflag)
+        self.update_motobs(setting, haltflag)
         self.wait()
         self.reset_sensobs()
 
