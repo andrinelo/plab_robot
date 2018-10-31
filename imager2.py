@@ -15,6 +15,20 @@ class Imager():
         self.mode = mode
         self.init_image(background=background)
 
+    def is_black(self):
+        blackCounter = 0
+        width = self.image.size[0]
+        height = self.image.size[1]
+
+        for x in width:
+            for y in height:
+                r, g, b = self.image.getpixel((x, y))
+                if b < g and b < r or r == g == b:
+                    blackCounter += 1
+
+        return blackCounter > (width * height) // 8
+
+
     def init_image(self,background='black'):
         if self.fid: self.load_image()
         if self.image: self.get_image_dims()
