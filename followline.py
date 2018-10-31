@@ -1,12 +1,14 @@
 from behaviour import Behaviour
-from sensob import *
+from sensob import ReflectanceSensob
 
 class FollowLine(Behaviour):
 
-    def __init__(self, bbcon, sensob, recommendations, priority):
+    def __init__(self, bbcon, recommendations, priority):
         super().__init__(bbcon, sensob, recommendations, priority)
         self.name = "FollowLine"
+        self.sensobs.append(ReflectanceSensob)
         self.treshold = 0.3
+        self.priority = 0.5
 
     def consider_activation(self):
         for value in self.r_sensob.update():
@@ -46,7 +48,6 @@ class FollowLine(Behaviour):
             self.motor_recommendations = ["f"]
             self.match_degree = 0.5
 
-        self.priority = 0.5
 
 
 
