@@ -10,6 +10,7 @@ from zumo_button import ZumoButton
 from arbitrator import Arbitrator
 from cameraBehaviour import cameraBehaviour
 from followline import FollowLine
+from behaviour import Behaviour
 
 class BBCON:
 
@@ -19,7 +20,6 @@ class BBCON:
         self.sensobs = [] #a list of all sensory objects
         self.motobs = [Motob()] #a list of all motor objects
         self.arb = Arbitrator() #this resolves motor requests produced by the behaviors.
-
 
     def add_behaviour(self, behaviour):
         #append a newly-created behavior onto the behaviors list.
@@ -50,8 +50,8 @@ class BBCON:
 
 
     def update_behaviours(self):
-        #Update all behaviors
-        pass
+        for behaviour in self.behaviours:
+            behaviour.update()
 
 
     def invoke_arb(self):

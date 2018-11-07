@@ -10,7 +10,7 @@ class Motob:
     def update(self, setting, haltflag):
         self.value = []
         if haltflag:
-            for motor in self.motors:
+            for motor in self.motor:
                 motor.stop()
         else:
             if setting: 
@@ -20,14 +20,20 @@ class Motob:
         #load new motor recommendation into the value slot and operationalize it.
 
     def operationalize(self):
+        print("inni operationalize motob")
+        print(len(self.value))
         if len(self.value) == 2:
+            print("inni 2)")
             self.motorsettings[self.value[0]](dur=self.value[1])
         elif len(self.value)==1:
+            print("inni 1")
             self.motorsettings[self.value[0]]()
         else: 
+            print("inni pass")
             pass
         #convert value into motor settings and send to the corresponding motor(s).
         
+
 
 
 '''

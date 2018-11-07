@@ -24,8 +24,8 @@ class cameraBehaviour(Behaviour):
         pass
 
     def can_take_picture(self):
-
-        distance = self.sensobs[1].get_value()
+        #self.sensobs[1].compute_value()
+        distance = self.sensobs[1].update()
         print(distance)
 
         if (distance < 10 and distance > 0):
@@ -35,7 +35,7 @@ class cameraBehaviour(Behaviour):
     def sense_and_act(self):
         if self.can_take_picture():
             print("Taking picture now!!")
-            img = Imager(image=self.sensobs[0].get_value(), mode='RGB')
+            img = IMR(image=self.sensobs[0].get_value(), mode='RGB')
             img.dump_image('test.jpeg')
 
             if img.is_black():

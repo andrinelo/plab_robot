@@ -9,9 +9,14 @@ class Arbitrator:
         setting = None
         haltflag = False
         current_weight = -1
+        print("inni choose action")
         for behaviour in behaviourlist:
+            print("inni choose action for-loop")
             if behaviour.weight > current_weight:
+                print("behaviour weight > current weight")
                 current_weight = behaviour.weight
                 haltflag = behaviour.halt_request
+                print("motor rec")
+                print(behaviour.motor_recommendations)
                 setting = behaviour.motor_recommendations
         return setting, haltflag

@@ -45,8 +45,9 @@ class UltrasonicSensob(Sensob):
     def update(self):
         for sensor in self.sensors:
             if isinstance(sensor, Ultrasonic):
-                value = sensor.get_value()
+                value = sensor.sensor_get_value()
                 self.value = value
+                return self.value
                 #dette er en numerisk value - returnerer distanse til objekt foran robot
             else:
                 raise TypeError
