@@ -85,12 +85,16 @@ class BBCON:
         self.reset_sensobs()
 
 if __name__ == '__main__':
+    ZumoButton().wait_for_press()
     bbcon = BBCON()
     #adding sensobs
-    bbcon.add_sensob(Sensob(Camera()))
+    '''bbcon.add_sensob(Sensob(Camera()))
     bbcon.add_sensob(Sensob(Ultrasonic()))
     bbcon.add_sensob(Sensob(IRProximitySensor()))
     bbcon.add_sensob(Sensob(ReflectanceSensors()))
-    bbcon.add_sensob(Sensob(ZumoButton()))
+    bbcon.add_sensob(Sensob(ZumoButton()))'''
     #adding behaviours
+    bbcon.add_behaviour(cameraBehaviour(bbcon))
+    bbcon.add_behaviour(FollowLine(bbcon))
+
 

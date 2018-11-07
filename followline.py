@@ -3,10 +3,12 @@ from sensob import ReflectanceSensob
 
 class FollowLine(Behaviour):
 
-    def __init__(self, bbcon, recommendations):
+    def __init__(self, bbcon=None, recommendations=[]):
         super().__init__(bbcon, recommendations)
         self.name = "FollowLine"
-        self.sensobs.append(ReflectanceSensob)
+        refsens = ReflectanceSensob()
+        self.sensobs.append(refsens)
+        self.bbcon.add_sensob(refsens)
         self.treshold = 0.3
         self.priority = 0.5
 

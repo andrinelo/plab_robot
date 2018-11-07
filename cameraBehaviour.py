@@ -9,8 +9,12 @@ class cameraBehaviour(Behaviour):
     def __init__(self, bbcon=None,  recommendations=[]):
         Behaviour.__init__(bbcon, recommendations)
         self.name = "take picture"
-        self.sensobs.append(CameraSensob)
-        self.sensobs.append(UltrasonicSensob)
+        camsens = CameraSensob()
+        self.sensobs.append(camsens)
+        self.bbcon.add_sensob(camsens)
+        ultsens = UltrasonicSensob()
+        self.sensobs.append(ultsens)
+        self.bbcon.add_sensob(ultsens)
         self.priority = 0.2
 
     def consider_activation(self):
