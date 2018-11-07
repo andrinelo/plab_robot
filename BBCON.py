@@ -1,13 +1,15 @@
 from time import sleep
 from motob import Motob
 from camera import Camera
-from sensob import Sensob
+from sensob import *
+
 from irproximity_sensor import IRProximitySensor
 from reflectance_sensors import ReflectanceSensors
 from ultrasonic import Ultrasonic
 from zumo_button import ZumoButton
 from arbitrator import Arbitrator
-
+from cameraBehaviour import cameraBehaviour
+from followline import FollowLine
 
 class BBCON:
 
@@ -87,14 +89,23 @@ class BBCON:
 if __name__ == '__main__':
     ZumoButton().wait_for_press()
     bbcon = BBCON()
+    #makin sensobObjects 
+    camsensob = CameraSensob(Camera())
+    ultsens = UltrasonicSensob(Ultrasonic())
+    refsens = ReflectanceSensob(ReflectanceSensors())
+
     #adding sensobs
-    '''bbcon.add_sensob(Sensob(Camera()))
-    bbcon.add_sensob(Sensob(Ultrasonic()))
-    bbcon.add_sensob(Sensob(IRProximitySensor()))
-    bbcon.add_sensob(Sensob(ReflectanceSensors()))
-    bbcon.add_sensob(Sensob(ZumoButton()))'''
+    bbcon.add_sensob(camsensob)
+    bbcon.add_sensob(ultsens)
+    bbcon.add_sensob(refsens)
+
     #adding behaviours
-    bbcon.add_behaviour(cameraBehaviour(bbcon))
-    bbcon.add_behaviour(FollowLine(bbcon))
+    bbcon.add_behaviour(cameraBehaviour([bbcon.sensobs[0],bbcon.sensobs[1]], bbcon))
+    bbcon.add_behaviour(FollowLine([bbcon.sensobs[2]], bbcon))
+
+    #calling loop 
+    #hello @
+    while True:
+        bbcon.run_one_timestep()
 
 

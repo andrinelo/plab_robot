@@ -45,7 +45,7 @@ class UltrasonicSensob(Sensob):
     def update(self):
         for sensor in self.sensors:
             if isinstance(sensor, Ultrasonic):
-                value = sensor.getValue()
+                value = sensor.get_value()
                 self.value = value
                 #dette er en numerisk value - returnerer distanse til objekt foran robot
             else:
@@ -59,7 +59,7 @@ class ReflectanceSensob(Sensob):
     def update(self):
         for sensor in self.sensors:
             if isinstance(sensor, ReflectanceSensors):
-                value = sensor.getValue()
+                value = sensor.get_value()
                 self.value = value
                 #dette er en array av 6 values
             else:
@@ -73,7 +73,7 @@ class CameraSensob(Sensob):
     def update(self):
         for sensor in self.sensors:
             if isinstance(sensor, Camera):
-                rgbobj = sensor.getValue()
+                rgbobj = sensor.get_value()
                 self.value = rgbobj
                 #dette er et rgb-objet, aka tre vals i en tuppel
             else:

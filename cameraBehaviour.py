@@ -6,16 +6,11 @@ from sensob import *
 
 class cameraBehaviour(Behaviour):
 
-    def __init__(self, bbcon=None,  recommendations=[]):
-        Behaviour.__init__(bbcon, recommendations)
-        self.name = "take picture"
-        camsens = CameraSensob()
-        self.sensobs.append(camsens)
-        self.bbcon.add_sensob(camsens)
-        ultsens = UltrasonicSensob()
-        self.sensobs.append(ultsens)
-        self.bbcon.add_sensob(ultsens)
+    def __init__(self, sensobs, bbcon=None,  recommendations=[]):
         self.priority = 0.2
+        Behaviour.__init__(self, sensobs, bbcon, recommendations)
+        self.name = "take picture"
+        
 
     def consider_activation(self):
         if self.can_take_picture(): #fix IF-statement

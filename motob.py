@@ -4,15 +4,18 @@ class Motob:
 
     def __init__(self):
         self.motor = Motors() #list of all motors whose values it sets
-        self.value = None #most recent motor recommendation sent to the motob.
+        self.value = [] #most recent motor recommendation sent to the motob.
         self.motorsettings = {'f': self.motor.forward, 'b':self.motor.backward, 'l':self.motor.left, 'r':self.motor.right, 's':self.motor.stop}
 
     def update(self, setting, haltflag):
+        self.value = []
         if haltflag:
             for motor in self.motors:
                 motor.stop()
         else:
-            self.value = setting
+            if setting: 
+                for comm in setting: 
+                    self.value.append(comm)
             self.operationalize()
         #load new motor recommendation into the value slot and operationalize it.
 

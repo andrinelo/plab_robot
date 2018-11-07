@@ -1,8 +1,8 @@
 class Behaviour:
 
-    def __init__(self, bbcon, recommendations):
+    def __init__(self, sensobs, bbcon, recommendations):
         self.bbcon = bbcon #pointer to the controller.
-        self.sensobs = [] #all sensobs that it uses.
+        self.sensobs = sensobs #all sensobs that it uses.
         self.motor_recommendations = [] #a list of recommendations, one per motob, that this behavior provides to the arbitrator.
         self.active_flag = False #boolean variable indicating that the behavior is currently active or inactive.
         self.halt_request = False #request that robot halts.
