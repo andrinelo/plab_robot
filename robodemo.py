@@ -75,5 +75,5 @@ def shoot_panorama(camera,motors,shots=5):
     return im
 
 if __name__ == '__main__':
-    explorer()
-    #dancer()
+    #explorer()
+    dancer()

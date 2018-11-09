@@ -11,6 +11,8 @@ class cameraBehaviour(Behaviour):
         super().__init__(sensobs, bbcon, recommendations)
         self.sensobs = self.bbcon.sensobs
         self.name = "take picture"
+        self.match_degree = 1
+        super().weight = 2
         
 
     def consider_activation(self):
@@ -35,7 +37,10 @@ class cameraBehaviour(Behaviour):
 
 
     def sense_and_act(self):
+        
         if self.can_take_picture():
+            self.match_degree = 1
+            self.weight = 1
             print("Taking picture now!!")
             img = self.sensobs[0].update()
             img = IMR.Imager(image = img).scale(3, 3)

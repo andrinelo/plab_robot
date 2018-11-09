@@ -14,10 +14,10 @@ class FollowLine(Behaviour):
         
 
     def consider_activation(self):
-        print("hvilken sensor er det?")
+        #print("hvilken sensor er det?")
         print(self.sensobs)
         value = self.sensobs.get_value()
-        print("Value array med tall fra 0-1 for dark eller light")
+        #print("Value array med tall fra 0-1 for dark eller light")
         print(value)
         for num in value:
             if num < self.treshold:
@@ -29,25 +29,35 @@ class FollowLine(Behaviour):
         # deactivating
         self.weight = 0
         self.bbcon.deactivate_behaviour(self)
-        print("slettet behaviour inni Followline")
+        #print("slettet behaviour inni Followline")
         self.active_flag = False
-        
+    '''    
     def update(self):
 
         self.consider_activation()
         self.sense_and_act()
         self.weight = self.priority * self.match_degree
+'''
 
     def sense_and_act(self):
+        #kjore forover helt til svart
+        self.motor_recommendations = ["f",1]
+        valueArray = self.sensobs.update()
+        
+        #print("valueArray: ", str(valueArray))
 
-        valueArray = self.sensobs.get_value()
-        #problemet er at denne returnerer None
-        #finne ut hvorfor
-
-        if valueArray[1] < self.treshold:
-            self.motor_recommendations = ["f", 3]
+        sum = 0
+        for value in valueArray:
+            sum += value
+        
+        sum = sum / len(valueArray)
+        print("SUM: ", str(sum))
+        if sum < self.treshold:
+            self.motor_recommendations = ["l", 2]
             self.match_degree = 0.8
+            #self.motor_recommendations = ["f"]
 
+        '''
         elif valueArray[4] < self.treshold:
             self.motor_recommendations = ["r", 1]
             self.match_degree = 0.8
@@ -55,7 +65,7 @@ class FollowLine(Behaviour):
         else:
             self.motor_recommendations = ["f", 1]
             self.match_degree = 0.5
-
+        ''' 
 
 
 

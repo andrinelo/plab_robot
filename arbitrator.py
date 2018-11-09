@@ -11,6 +11,10 @@ class Arbitrator:
         current_weight = -1
         print("inni choose action")
         for behaviour in behaviourlist:
+            print("behvaiour:")
+            print(behaviour)
+            print("vekt")
+            print(behaviour.weight)
             print("inni choose action for-loop")
             if behaviour.weight > current_weight:
                 print("behaviour weight > current weight")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from time import sleep
 import RPi.GPIO as GPIO
-import wiringpi2 as wp
+import wiringpi as wp
 
 
 class Motors:
@@ -50,6 +50,7 @@ class Motors:
         self.persist(dur)
 
     def left(self, speed=0.25, dur=None):
+        print("run left ")
         s = int(self.max * speed)
         if self.dc == 0:
             self.set_left_dir(1)

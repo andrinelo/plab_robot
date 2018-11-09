@@ -29,8 +29,8 @@ class ReflectanceSensors():
 
     def setup(self):
         # Initialize class variables
-        self.max_val = [1, 1, 1, 1, 1, 1]
-        self.min_val = [0, 0, 0, 0, 0, 0]
+        self.max_val = [-1, -1, -1, -1, -1, -1]
+        self.min_val = [-1, -1, -1, -1, -1, -1]
         self.start_time = -1
         # Initialize value array to all negative values, which should never appear
         # as an actual result
@@ -120,7 +120,7 @@ class ReflectanceSensors():
 
             index = self.sensor_indices[pin]
             self.value[index] = 1 - self.normalize(index, time.microseconds)
-
+            #print("value array: ", str(self.value))
 
     # Uses the calibrated min and maxs for each sensor to return a normalized
     # value for the @param sensor_time for the given @param index

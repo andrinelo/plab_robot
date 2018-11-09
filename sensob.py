@@ -29,14 +29,6 @@ class Sensob:
     def reset(self):
         self.value = None
 
-
-    '''
-    Vet ikke hvor dette skal inn
-    Zumo Button
-        A very simple sensor.
-        The only method: wait_for_press
-    
-    '''
 class UltrasonicSensob(Sensob):
 
     def __init__(self, sensor):
@@ -60,9 +52,10 @@ class ReflectanceSensob(Sensob):
     def update(self):
         for sensor in self.sensors:
             if isinstance(sensor, ReflectanceSensors):
-                value = sensor.get_value()
+                value = sensor.update()
                 self.value = value
                 #dette er en array av 6 values
+                return self.value
             else:
                 raise TypeError
 
@@ -76,6 +69,7 @@ class CameraSensob(Sensob):
             if isinstance(sensor, Camera):
                 rgbobj = sensor.get_value()
                 self.value = rgbobj
+                return self.value
                 #dette er et rgb-objet, aka tre vals i en tuppel
             else:
                 raise TypeError

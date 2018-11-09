@@ -6,7 +6,7 @@ class Behaviour:
         self.motor_recommendations = [] #a list of recommendations, one per motob, that this behavior provides to the arbitrator.
         self.active_flag = False #boolean variable indicating that the behavior is currently active or inactive.
         self.halt_request = False #request that robot halts.
-        self.match_degree = 0 #value between [0,1] : degree to which current conditions warrant the performance of this behavior.
+        self.match_degree = 1 #value between [0,1] : degree to which current conditions warrant the performance of this behavior.
         self.priority = 0.2
         self.weight = self.priority*self.match_degree #priority x match degree; the arbitrator gets this.
 
