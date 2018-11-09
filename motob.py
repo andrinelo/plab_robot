@@ -9,9 +9,11 @@ class Motob:
 
     def update(self, setting, haltflag):
         self.value = []
+        #motors = self.motor
         if haltflag:
-            for motor in self.motor:
-                motor.stop()
+            self.motor.stop()
+            #for motor in motors:
+             #   motor.stop()
         else:
             if setting: 
                 for comm in setting: 
@@ -23,10 +25,10 @@ class Motob:
         print("inni operationalize motob")
         print(len(self.value))
         if len(self.value) == 2:
-            print("inni 2)")
+            print("sendt inn to argument til motob)")
             self.motorsettings[self.value[0]](dur=self.value[1])
         elif len(self.value)==1:
-            print("inni 1")
+            print("senddt inn 1 argument til motob")
             self.motorsettings[self.value[0]]()
         else: 
             print("inni pass")

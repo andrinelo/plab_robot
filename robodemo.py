@@ -16,6 +16,7 @@ from zumo_button import ZumoButton
 # This just moves the robot around in a fixed dance pattern.  It uses no sensors.
 
 def dancer():
+    print("dancer")
     ZumoButton().wait_for_press()
     m = Motors()
     m.forward(.2,3)
@@ -31,6 +32,7 @@ def dancer():
 # then does a little dancing before backing up to approximately 50 cm from the nearest obstacle.
 
 def explorer(dist=10):
+    print("explorer")
     ZumoButton().wait_for_press()
     m = Motors(); u = Ultrasonic()
     while u.update() > dist:
@@ -72,3 +74,6 @@ def shoot_panorama(camera,motors,shots=5):
         im = im.concat_horiz(IMR.Imager(image=camera.update()))
     return im
 
+if __name__ == '__main__':
+    explorer()
+    #dancer()

@@ -16,14 +16,15 @@ class Imager():
         self.init_image(background=background)
 
     def is_black(self):
+        image = self.image
         blackCounter = 0
-        width = self.image.size[0]
-        height = self.image.size[1]
+        width = image.size[0]
+        height = image.size[1]
 
-        for x in width:
-            for y in height:
-                r, g, b = self.image.getpixel((x, y))
-                if b < g and b < r or r == g == b:
+        for x in range(width):
+            for y in range(height):
+                pix = self.get_pixel(x,y)
+                if((pix[0] < 70) and (pix[1] < 70) and (pix[2] < 70)):
                     blackCounter += 1
 
         return blackCounter > (width * height) // 8

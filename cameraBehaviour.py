@@ -1,14 +1,15 @@
 from behaviour import Behaviour
 from camera import Camera
-import imager2 as IMR
+#from imager2 import Imager as IMR
 from sensob import *
-
+import imager2 as IMR
 
 class cameraBehaviour(Behaviour):
 
     def __init__(self, sensobs, bbcon=None,  recommendations=[]):
         self.priority = 0.2
-        Behaviour.__init__(self, sensobs, bbcon, recommendations)
+        super().__init__(sensobs, bbcon, recommendations)
+        self.sensobs = self.bbcon.sensobs
         self.name = "take picture"
         
 
@@ -20,6 +21,7 @@ class cameraBehaviour(Behaviour):
     def consider_deactivation(self):
         if not self.can_take_picture(): #fix IF-statement
             self.bbcon.deactivate_behaviour(self)
+            print("slettet behaviour inni CB")
             self.active_flag = False
         pass
 
@@ -35,7 +37,11 @@ class cameraBehaviour(Behaviour):
     def sense_and_act(self):
         if self.can_take_picture():
             print("Taking picture now!!")
-            img = IMR(image=self.sensobs[0].get_value(), mode='RGB')
+            img = self.sensobs[0].update()
+            img = IMR.Imager(image = img).scale(3, 3)
+
+
+            #img = IMR(image=self.sensobs[0].get_value(), mode='RGB').scale(3,3)
             img.dump_image('test.jpeg')
 
             if img.is_black():
@@ -46,6 +52,7 @@ class cameraBehaviour(Behaviour):
                 print("picture is bright")
                 self.motor_recommendations = ['f', 2] #kjorer forover i 2 sec
                 self.priority = 0.2
+
 
 
 

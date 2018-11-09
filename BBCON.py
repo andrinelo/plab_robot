@@ -40,6 +40,7 @@ class BBCON:
     def deactivate_behaviour(self, behaviour):
         #remove an existing behavior from the active behaviors list.
         self.active_behaviours.remove(behaviour)
+        print("slettet behaviour")
 
 
     def update_sensobs(self):
